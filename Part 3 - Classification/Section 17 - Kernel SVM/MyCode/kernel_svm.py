@@ -21,7 +21,8 @@ x_train = sc.fit_transform(x_train)
 x_test = sc.transform(x_test)
 
 # Fitting Kernel SVM to the Training set
-
+from sklearn.svm import SVC
+classifier = SVC(kernel = 'rbf')
 
 # Predicting the Test set results
 y_pred = classifier.predict(x_test)

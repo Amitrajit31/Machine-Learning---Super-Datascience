@@ -28,11 +28,11 @@ k_means = KMeans(n_clusters=5, init='k-means++', n_init=10, max_iter=300, random
 y_kmeans = k_means.fit_predict(x) #make groups of customers
 
 # Visualising data
-plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 1], s = 100, c = 'red', label = 'Cluster 1')
-plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 1], s = 100, c = 'blue', label = 'Cluster 2')
-plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 1], s = 100, c = 'green', label = 'Cluster 3')
-plt.scatter(x[y_kmeans == 3, 0], x[y_kmeans == 3, 1], s = 100, c = 'magenta', label = 'Cluster 4')
-plt.scatter(x[y_kmeans == 4, 0], x[y_kmeans == 4, 1], s = 100, c = 'gray', label = 'Cluster 5')
+plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 1], s = 100, c = 'red', label = 'Careful')
+plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 1], s = 100, c = 'blue', label = 'Standard')
+plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 1], s = 100, c = 'green', label = 'Target')
+plt.scatter(x[y_kmeans == 3, 0], x[y_kmeans == 3, 1], s = 100, c = 'magenta', label = 'Careless')
+plt.scatter(x[y_kmeans == 4, 0], x[y_kmeans == 4, 1], s = 100, c = 'gray', label = 'Sensible')
 plt.scatter(k_means.cluster_centers_[:,0], k_means.cluster_centers_[:,1], s = 300, c = 'yellow', label = 'Centroids')
 plt.title('Clusters of clients')
 plt.xlabel('Annual income (k$)')

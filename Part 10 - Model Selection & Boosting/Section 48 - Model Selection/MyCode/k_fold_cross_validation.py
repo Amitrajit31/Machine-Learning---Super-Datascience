@@ -28,12 +28,17 @@ classifier.fit(X_train, y_train)
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
 
-# Making the Confusion Matrix
+# Making the Confusion Matrix - Performance validation
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
-# Applying k-Fold Cross Validation
-
+# Applying k-Fold Cross Validation - Performance validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+# Adding parameter n_jobs = -1 in cross_val_score uses all the cpus in validation
+accuracies.mean() #Print mean of accuracies(0.9005302187615868)
+accuracies.std() #Print standard deviation(0.06388957356626285). avg between accuracies difference
+# This lies between low bias low variance
 
 # Visualising the Training set results
 from matplotlib.colors import ListedColormap

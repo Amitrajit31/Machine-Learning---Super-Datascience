@@ -1,0 +1,8 @@
+UCB 
+1.Determinestic algorithm
+
+
+
+Thompson sampling
+1.Probablistic algorithm
+2.Constructing distribution of where we think the actual expected value might lies on(NOT distribution of machine)
